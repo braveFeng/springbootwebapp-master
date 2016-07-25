@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head lang="en">
+    <title>Spring Framework Guru</title>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <h2>Product List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Product Id</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>View</th>
+                <th>Edit</th>
+            </tr>
+            #foreach($product in $products)
+             <tr>
+                <td>$product.id</a></td>
+                <td>$product.productId</td>
+                <td>$product.description</td>
+                <td>$product.price</td>
+             </tr>
+            #end
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

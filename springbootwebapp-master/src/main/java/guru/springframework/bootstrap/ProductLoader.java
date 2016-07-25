@@ -4,6 +4,7 @@ import guru.springframework.domain.Product;
 import guru.springframework.repositories.ProductRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,6 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         this.productRepository = productRepository;
     }
 
-    @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
         Product shirt = new Product();
@@ -40,6 +40,7 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
         mug.setProductId("168639393495335947");
         mug.setPrice(new BigDecimal("11.95"));
         productRepository.save(mug);
+        
 
         log.info("Saved Mug - id:" + mug.getId());
     }
